@@ -5,4 +5,5 @@ export default {
   getBlogInfo: BASE_URL + '/api/blog',
   login: BASE_URL + '/api/login',
   addBlog: BASE_URL + '/api/blog',
+  createComment: BASE_URL + '/api/users/comment'
 }
