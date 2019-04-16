@@ -7,18 +7,11 @@ import fetch from 'isomorphic-unfetch'
 import moment from 'moment'
 import api from '../utils/api'
 
-const News = (props) => {
-  const renderTime = (time) => {
-
-  }
-  return <Layout title='新闻列表' className="news_page">
+const News = (props) => (<Layout title='新闻列表' className="news_page">
       <List
         bordered
         pagination={{
-          onChange: (page) => {
-            console.log(page);
-          },
-          pageSize: 10, 
+          pageSize: 10
         }}
         dataSource={props.list}
         renderItem={info => (<List.Item>
@@ -30,7 +23,7 @@ const News = (props) => {
       </List.Item>)}
       />
   </Layout>
-}
+)
 
 News.getInitialProps = async function() {
   const res = await fetch(api.getBlogList + '?offset=0&limit=100')

@@ -56,15 +56,6 @@ class newsDetail extends React.Component {
         <div className="comment_list">
         <h3 className="h_title">评论：</h3>
         <List
-          pagination={{
-            onChange: (page) => {
-              console.log(page);
-            },
-            pageSize: 10, 
-          }}
-          locale = {{
-            emptyText: '暂无数据'
-          }}
           dataSource={props.info.comment}
           renderItem={info => (<List.Item>
             <span className="comment_name">{info.user.username}</span>

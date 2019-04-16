@@ -2,6 +2,8 @@ import App, { Container } from 'next/app'
 import React from 'react'
 import { initializeStore } from '../stores'
 import { Provider } from 'mobx-react'
+import { LocaleProvider } from 'antd';
+import zhCN from 'antd/lib/locale-provider/zh_CN';
 
 class MyMobxApp extends App {
   static async getInitialProps(appContext) {
@@ -32,7 +34,9 @@ class MyMobxApp extends App {
     return (
       <Container>
         <Provider store={this.mobxStore}>
-          <Component {...pageProps} />
+          <LocaleProvider locale={zhCN}>
+            <Component {...pageProps} />
+          </LocaleProvider>
         </Provider>
       </Container>
     )
